@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Preeti Sharma | CV</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  :root {
+    --primary: #1a3a5c;
+    --accent: #2e86c1;
+    --light: #eaf4fb;
+    --text: #2c3e50;
+    --muted: #7f8c8d;
+    --white: #fff;
+    --border: #d5e8f5;
+  }
+  body { font-family: 'Segoe UI', sans-serif; background: #f0f4f8; color: var(--text); }
+
+  /* HEADER */
+  header {
+    background: linear-gradient(135deg, var(--primary) 0%, #2e6da4 100%);
+    color: var(--white); padding: 50px 40px 40px; text-align: center;
+  }
+  .avatar {
+    width: 90px; height: 90px; border-radius: 50%;
+    background: rgba(255,255,255,0.2); border: 3px solid rgba(255,255,255,0.5);
+    display: flex; align-items: center; justify-content: center;
+    font-size: 36px; font-weight: 700; margin: 0 auto 18px; color: #fff;
+  }
+  header h1 { font-size: 2rem; font-weight: 700; letter-spacing: 1px; }
+  header p.title { font-size: 1rem; opacity: 0.85; margin-top: 6px; letter-spacing: 2px; text-transform: uppercase; }
+  .contact-bar {
+    display: flex; flex-wrap: wrap; justify-content: center; gap: 20px;
+    margin-top: 22px;
+  }
+  .contact-bar a, .contact-bar span {
+    color: rgba(255,255,255,0.9); text-decoration: none; font-size: 0.88rem;
+    display: flex; align-items: center; gap: 6px;
+  }
+  .contact-bar a:hover { color: #fff; text-decoration: underline; }
+  .icon { font-style: normal; font-size: 1rem; }
+
+  /* LAYOUT */
+  .container { max-width: 1000px; margin: 0 auto; padding: 36px 20px 60px; display: grid; grid-template-columns: 1fr 2fr; gap: 28px; }
+
+  /* CARDS */
+  .card { background: var(--white); border-radius: 10px; padding: 26px 24px; box-shadow: 0 2px 12px rgba(0,0,0,0.07); margin-bottom: 24px; }
+  .card:last-child { margin-bottom: 0; }
+  .section-title {
+    font-size: 0.75rem; font-weight: 700; text-transform: uppercase; letter-spacing: 2px;
+    color: var(--accent); border-bottom: 2px solid var(--border); padding-bottom: 8px; margin-bottom: 16px;
+  }
+
+  /* OBJECTIVE */
+  .objective-text { font-size: 0.9rem; line-height: 1.7; color: #555; }
+
+  /* EDUCATION */
+  .edu-item { margin-bottom: 14px; }
+  .edu-item:last-child { margin-bottom: 0; }
+  .edu-degree { font-weight: 600; font-size: 0.93rem; }
+  .edu-detail { font-size: 0.82rem; color: var(--muted); margin-top: 2px; }
+  .badge { display: inline-block; background: var(--light); color: var(--accent); border-radius: 20px; padding: 2px 10px; font-size: 0.75rem; font-weight: 600; margin-top: 4px; }
+
+  /* SKILLS */
+  .skill-tag {
+    display: inline-block; background: var(--light); color: var(--primary);
+    border-radius: 6px; padding: 5px 12px; font-size: 0.8rem; margin: 4px 3px;
+    font-weight: 500; border: 1px solid var(--border);
+  }
+
+  /* STRENGTHS */
+  .strength-item { display: flex; align-items: flex-start; gap: 8px; font-size: 0.87rem; margin-bottom: 9px; }
+  .dot { width: 8px; height: 8px; border-radius: 50%; background: var(--accent); margin-top: 5px; flex-shrink: 0; }
+
+  /* EXPERIENCE */
+  .job { margin-bottom: 26px; padding-bottom: 26px; border-bottom: 1px solid var(--border); }
+  .job:last-child { border-bottom: none; margin-bottom: 0; padding-bottom: 0; }
+  .job-header { display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap; gap: 6px; margin-bottom: 4px; }
+  .job-title { font-weight: 700; font-size: 1rem; color: var(--primary); }
+  .job-duration { font-size: 0.78rem; background: var(--accent); color: #fff; padding: 3px 10px; border-radius: 20px; white-space: nowrap; }
+  .job-company { font-size: 0.88rem; color: var(--accent); font-weight: 600; margin-bottom: 10px; }
+  .job ul { padding-left: 18px; }
+  .job ul li { font-size: 0.86rem; color: #555; margin-bottom: 5px; line-height: 1.55; }
+
+  /* TECHNICAL SKILLS */
+  .tech-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+  .tech-block h4 { font-size: 0.8rem; font-weight: 700; color: var(--primary); text-transform: uppercase; letter-spacing: 1px; margin-bottom: 8px; }
+  .tech-block ul { padding-left: 16px; }
+  .tech-block ul li { font-size: 0.82rem; color: #555; margin-bottom: 4px; }
+
+  /* ACHIEVEMENTS */
+  .achievement-item { display: flex; gap: 10px; margin-bottom: 10px; font-size: 0.87rem; color: #555; line-height: 1.55; }
+  .star { color: var(--accent); font-size: 1rem; margin-top: 1px; }
+
+  /* REFERENCES */
+  .ref-grid { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 14px; }
+  .ref-card { background: var(--light); border-radius: 8px; padding: 14px; font-size: 0.82rem; }
+  .ref-name { font-weight: 700; color: var(--primary); margin-bottom: 4px; }
+  .ref-role { color: var(--muted); font-size: 0.78rem; margin-bottom: 6px; }
+  .ref-contact { color: var(--accent); font-size: 0.8rem; }
+
+  /* FOOTER */
+  footer { text-align: center; padding: 20px; font-size: 0.78rem; color: var(--muted); }
+
+  @media (max-width: 700px) {
+    .container { grid-template-columns: 1fr; }
+    .tech-grid { grid-template-columns: 1fr; }
+    .ref-grid { grid-template-columns: 1fr; }
+    .job-header { flex-direction: column; }
+  }
+</style>
+</head>
+<body>
+
+<!-- HEADER -->
+<header>
+  <div class="avatar">PS</div>
+  <h1>Preeti Sharma</h1>
+  <p class="title">Chemist &amp; Data Management Professional</p>
+  <div class="contact-bar">
+    <span><i class="icon">📍</i> Bilaunji, Singrauli, Madhya Pradesh – 486886</span>
+    <a href="tel:8103404064"><i class="icon">📞</i> 8103404064</a>
+    <a href="mailto:preetisharma9575992010@gmail.com"><i class="icon">✉️</i> preetisharma9575992010@gmail.com</a>
+  </div>
+</header>
+
+<!-- MAIN LAYOUT -->
+<div class="container">
+
+  <!-- LEFT COLUMN -->
+  <div class="left">
+
+    <!-- OBJECTIVE -->
+    <div class="card">
+      <div class="section-title">Career Objective</div>
+      <p class="objective-text">To obtain a responsible position in a reputed organization where I can utilize my skills and knowledge to contribute to the company's growth, while continuously developing my professional abilities with dedication, honesty, and enthusiasm.</p>
+    </div>
+
+    <!-- EDUCATION -->
+    <div class="card">
+      <div class="section-title">Education</div>
+      <div class="edu-item">
+        <div class="edu-degree">M.Sc – Chemistry</div>
+        <div class="edu-detail">APS University · 2025</div>
+        <span class="badge">75% – First Division</span>
+      </div>
+      <div class="edu-item">
+        <div class="edu-degree">B.Sc</div>
+        <div class="edu-detail">APS University · 2023</div>
+        <span class="badge">70% – First Division</span>
+      </div>
+      <div class="edu-item">
+        <div class="edu-degree">12th – MP Board</div>
+        <div class="edu-detail">2020</div>
+        <span class="badge">59.9% – Second Division</span>
+      </div>
+      <div class="edu-item">
+        <div class="edu-degree">10th – MP Board</div>
+        <div class="edu-detail">2018</div>
+        <span class="badge">55% – Second Division</span>
+      </div>
+    </div>
+
+    <!-- COMPUTER SKILLS -->
+    <div class="card">
+      <div class="section-title">Computer Skills</div>
+      <span class="skill-tag">MS Excel</span>
+      <span class="skill-tag">MS Word</span>
+      <span class="skill-tag">PowerPoint</span>
+      <span class="skill-tag">Data Entry</span>
+      <span class="skill-tag">Internet & Email</span>
+      <span class="skill-tag">File Management</span>
+      <span class="skill-tag">DCA Certified</span>
+    </div>
+
+    <!-- STRENGTHS -->
+    <div class="card">
+      <div class="section-title">Strengths</div>
+      <div class="strength-item"><div class="dot"></div>Quick learner and adaptable</div>
+      <div class="strength-item"><div class="dot"></div>Strong analytical & problem-solving skills</div>
+      <div class="strength-item"><div class="dot"></div>Attention to detail and accuracy</div>
+      <div class="strength-item"><div class="dot"></div>Effective communication skills</div>
+      <div class="strength-item"><div class="dot"></div>Dedicated, honest, and hardworking</div>
+      <div class="strength-item"><div class="dot"></div>Team player with positive attitude</div>
+    </div>
+
+  </div>
+
+  <!-- RIGHT COLUMN -->
+  <div class="right">
+
+    <!-- WORK EXPERIENCE -->
+    <div class="card">
+      <div class="section-title">Work Experience</div>
+
+      <div class="job">
+        <div class="job-header">
+          <div class="job-title">Chemist – Quality Control Department</div>
+          <div class="job-duration">June 2025 – Present</div>
+        </div>
+        <div class="job-company">Reliance Sasan Power Ltd. · Singrauli, MP</div>
+        <ul>
+          <li>Performing chemistry operations at a Super Critical 6×660 MW Coal-Based Thermal Power Plant.</li>
+          <li>Conducting coal proximate analysis (moisture, ash, VM, FC, GCV) using Bomb Calorimeters (IKA C2000, Parr 6200).</li>
+          <li>Performing oil analysis: TAN, viscosity, moisture, mechanical impurity, and NAS using Karl Fischer Titration, Kinematic Viscometer, and PAMAS.</li>
+          <li>Operating DM Plant independently; conducting full water chemistry parameter analysis (pH, conductivity, silica, hardness, alkalinity, etc.).</li>
+          <li>Exposure to Boiler Water Chemistry, CPU, Cooling Tower, ETP, STP, and Chlorination Plant.</li>
+          <li>Delivered presentations on DM Plant, Coal & Oil Analysis, Boiler Water Treatment, and overall Chemistry Department operations.</li>
+        </ul>
+      </div>
+
+      <div class="job">
+        <div class="job-header">
+          <div class="job-title">Assistant Account Executive</div>
+          <div class="job-duration">Jan 2025 – Jun 2025 · 5 months</div>
+        </div>
+        <div class="job-company">Symbroj Solar Pvt. Limited</div>
+        <ul>
+          <li>Created and processed sales orders and invoices with accurate record-keeping.</li>
+          <li>Managed payment processing, follow-ups, and payment records.</li>
+          <li>Handled customer insurance documentation and related processes.</li>
+          <li>Coordinated with departments for smooth order execution and compliance.</li>
+          <li>Maintained and organized official files, documents, and business records.</li>
+        </ul>
+      </div>
+
+      <div class="job">
+        <div class="job-header">
+          <div class="job-title">Sales Back Office Executive</div>
+          <div class="job-duration">Feb 2024 – Dec 2024 · 11 months</div>
+        </div>
+        <div class="job-company">Maruti Suzuki India Limited</div>
+        <ul>
+          <li>Handled sales back-office operations and daily Excel reporting.</li>
+          <li>Managed retail updates, stock entries, stock records, and inventory management.</li>
+          <li>Prepared sales records and reports; maintained complete filing and documentation.</li>
+          <li>Coordinated with the sales team to ensure smooth documentation and data accuracy.</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- TECHNICAL SKILLS -->
+    <div class="card">
+      <div class="section-title">Technical Skills – Power Plant Chemistry</div>
+      <div class="tech-grid">
+        <div class="tech-block">
+          <h4>⚗️ Coal Analysis</h4>
+          <ul>
+            <li>Sampling (cross sample, increment, conning & quartering)</li>
+            <li>Proximate Analysis: IM, Ash, VM, FC</li>
+            <li>GCV by Bomb Calorimeter</li>
+            <li>Total & Surface Moisture, ODM, EM</li>
+            <li>Ultimate Analysis: Sulphur</li>
+            <li>Yard metric, acid correction, coal density</li>
+          </ul>
+        </div>
+        <div class="tech-block">
+          <h4>🛢️ Oil Analysis</h4>
+          <ul>
+            <li>Oil sampling as per standard procedure</li>
+            <li>Moisture, TAN, Viscosity</li>
+            <li>Mechanical Impurity, NAS</li>
+            <li>Instruments: KF Titration, Kinematic Viscometer, PAMAS</li>
+          </ul>
+        </div>
+        <div class="tech-block">
+          <h4>💧 DM Plant Operations</h4>
+          <ul>
+            <li>Raw Water: Intake, Screening, Clarification, Filtration</li>
+            <li>Can operate DM Plant independently</li>
+            <li>Full water parameter analysis</li>
+            <li>Cation, Anion & Mixed Bed Regeneration</li>
+            <li>Chemical loading, unloading & solution preparation</li>
+          </ul>
+        </div>
+        <div class="tech-block">
+          <h4>🏭 Other Plant Areas</h4>
+          <ul>
+            <li>Boiler Water Chemistry</li>
+            <li>Condensate Polishing Unit (CPU)</li>
+            <li>Cooling Tower</li>
+            <li>Chlorination Plant</li>
+            <li>ETP & STP</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- ACHIEVEMENTS -->
+    <div class="card">
+      <div class="section-title">Achievements</div>
+      <div class="achievement-item"><span class="star">★</span> Delivered presentations on DM Plant, Coal Analysis, Oil Analysis, Boiler Water Treatment, CPU, and overall Chemistry Department operations.</div>
+      <div class="achievement-item"><span class="star">★</span> Actively involved in safety awareness activities at the power plant.</div>
+      <div class="achievement-item"><span class="star">★</span> Gained comprehensive knowledge of industrial practices and environmental compliance.</div>
+    </div>
+
+    <!-- REFERENCES -->
+    <div class="card">
+      <div class="section-title">References</div>
+      <div class="ref-grid">
+        <div class="ref-card">
+          <div class="ref-name">Dr. Baijanath Upadhya</div>
+          <div class="ref-role">Head of Department – Chemistry<br>Reliance Sasan Power Ltd.</div>
+          <div class="ref-contact">+91 8305578090</div>
+        </div>
+        <div class="ref-card">
+          <div class="ref-name">Mr. Sunil Pathak</div>
+          <div class="ref-role">General Manager<br>Reliance Sasan Power</div>
+          <div class="ref-contact">+91 8305711223</div>
+        </div>
+        <div class="ref-card">
+          <div class="ref-name">Mr. Chandra Pratap Singh</div>
+          <div class="ref-role">General Manager</div>
+          <div class="ref-contact">+91 8817696697</div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<footer>
+  <p>I hereby declare that the above information is true to the best of my knowledge and belief. &nbsp;·&nbsp; Preeti Sharma</p>
+</footer>
+
+</body>
+</html>
